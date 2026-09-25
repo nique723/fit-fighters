@@ -20,6 +20,8 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 
 Touch devices get six on-screen buttons.
 
+Camera is optional. Press **Camera**, allow the webcam, hold guard 2 seconds, throw one jab. Pose runs on-device. Video never leaves the browser.
+
 ## Deploy
 
 Push `main` to GitHub. Vercel builds with zero config (`vite` detected, `dist` output).
