@@ -7,6 +7,7 @@ import { Dummy } from './dummy.js';
 import { Combat } from './combat.js';
 import { UI } from './ui.js';
 import { createStats } from './stats.js';
+import { CameraMode } from './camera.js';
 
 class ArenaScene extends Phaser.Scene {
   constructor() {
@@ -30,6 +31,7 @@ class ArenaScene extends Phaser.Scene {
     this.stats = createStats();
     this.ui = new UI(this);
     this.combat = new Combat(this, this.player, this.dummy, this.audio, this.stats, this.ui);
+    this.cameraMode = new CameraMode(this.inputBus, this.stats);
 
     this.input.once('pointerdown', () => this.audio.ensure());
     window.addEventListener('keydown', () => this.audio.ensure(), { once: true });

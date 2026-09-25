@@ -6,6 +6,9 @@ export default defineConfig({
     port: 5173,
     host: true
   },
+  optimizeDeps: {
+    exclude: ['@mediapipe/tasks-vision']
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets'

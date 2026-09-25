@@ -12,7 +12,14 @@ export function createStats() {
     countersLanded: 0,
     dummyJabsThrown: 0,
     dummyJabsLanded: 0,
-    dummyKnockdowns: 0
+    dummyKnockdowns: 0,
+    camera: {
+      confidence: 0,
+      missedFrames: 0,
+      processed: 0,
+      lastAction: '—',
+      visible: true
+    }
   };
 }
 
@@ -30,6 +37,9 @@ export function formatStats(stats, extras) {
     ``,
     `SLIPS     ${stats.slipsSuccessful} / ${stats.slipsAttempted}`,
     `COUNTERS  ${stats.countersLanded}`,
-    `DUMMY     thrown ${stats.dummyJabsThrown}  hit you ${stats.dummyJabsLanded}  KD ${stats.dummyKnockdowns}`
+    `DUMMY     thrown ${stats.dummyJabsThrown}  hit you ${stats.dummyJabsLanded}  KD ${stats.dummyKnockdowns}`,
+    ``,
+    `CAM       conf ${(stats.camera.confidence * 100).toFixed(0)}%  ok ${stats.camera.processed}  miss ${stats.camera.missedFrames}`,
+    `CAM LAST  ${stats.camera.lastAction || '—'}`
   ].join('\n');
 }
